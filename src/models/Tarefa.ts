@@ -1,4 +1,3 @@
-import { Descricao, Titulo } from '../components/Tarefa/styles'
 import * as enums from '../utils/enums/Tarefa'
 
 class Tarefa {
@@ -15,10 +14,10 @@ class Tarefa {
     descricao: string,
     id: number
   ) {
-    this.titulo = Titulo
+    this.titulo = titulo
     this.prioridade = prioridade
     this.status = status
-    this.descricao = Descricao
+    this.descricao = descricao
     this.id = id
   }
 }
