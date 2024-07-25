@@ -1,5 +1,5 @@
 export enum Prioridade {
-  URGENTE = 'urgente',
+  URGENTE = 'favorito',
   IMPORTANTE = 'importante',
   NORMAL = 'normal'
 }

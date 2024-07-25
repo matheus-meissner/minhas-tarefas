@@ -70,6 +70,7 @@ const Formulario = () => {
         >
           <option value={enums.Prioridade.NORMAL}>Normal</option>
           <option value={enums.Prioridade.IMPORTANTE}>Importante</option>
+          <option value={enums.Prioridade.URGENTE}>Favorito</option>
         </select>
       </Opcoes>
       <BotaoSalvar type="submit">Cadastrar</BotaoSalvar>
