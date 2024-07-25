@@ -13,28 +13,19 @@ const initialState: TarefasState = {
       id: 1,
       nomeCompleto: 'João Silva Souza',
       email: 'joao.silva@example.com',
-      telefone: '123456789',
+      telefone: '11976485264',
       prioridade: enums.Prioridade.NORMAL,
       status: enums.Status.CONCLUIDA,
       titulo: 'João Silva'
     },
     {
       id: 2,
-      nomeCompleto: 'Estudo Typescript',
-      email: 'estudo.ts@example.com',
-      telefone: '987654321',
-      prioridade: enums.Prioridade.NORMAL,
+      nomeCompleto: 'Pedro Gomes Oliveira',
+      email: 'pedro.gomes@oliveira.com',
+      telefone: '11987654321',
+      prioridade: enums.Prioridade.URGENTE,
       status: enums.Status.PENDENTE,
-      titulo: 'Estudar Typescript'
-    },
-    {
-      id: 3,
-      nomeCompleto: 'Estudo Bootstrap',
-      email: 'estudo.bs@example.com',
-      telefone: '456123789',
-      prioridade: enums.Prioridade.IMPORTANTE,
-      status: enums.Status.PENDENTE,
-      titulo: 'Estudar Bootstrap'
+      titulo: 'Pedro Gomes'
     }
   ]
 }

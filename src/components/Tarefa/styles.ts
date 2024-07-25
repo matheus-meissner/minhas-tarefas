@@ -24,19 +24,21 @@ export const Card = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 16px;
   border-radius: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  margin-left: 13vw;
+  width: 70%;
 
   label {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
 `
 
 export const Titulo = styled.h3`
   font-weight: bold;
   font-size: 18px;
-  margin-left: 8px;
 `
 
 export const Tag = styled.span<TagProps>`
