@@ -53,7 +53,7 @@ const tarefasSlice = createSlice({
       )
 
       if (tarefaJaExiste) {
-        alert('Já exite uma tarefa com este nome')
+        alert('Já exite um contato com este nome')
       } else {
         const ultimaTarefa = state.itens[state.itens.length - 1]
         const tarefaNova = {

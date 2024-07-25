@@ -4,6 +4,7 @@ import { cadastrar } from '../../store/reducers/tarefas'
 import * as enums from '../../utils/enums/Tarefa'
 import { Form, Opcoes } from './styles'
 import { BotaoSalvar } from '../../styles'
+import { useNavigate } from 'react-router-dom'
 
 const Formulario = () => {
   const [nomeCompleto, setNomeCompleto] = useState('')
@@ -13,6 +14,7 @@ const Formulario = () => {
   const [prioridade, setPrioridade] = useState(enums.Prioridade.NORMAL)
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -26,6 +28,8 @@ const Formulario = () => {
         status: enums.Status.PENDENTE
       })
     )
+
+    navigate('/')
   }
 
   return (
