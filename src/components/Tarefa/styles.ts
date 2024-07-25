@@ -68,6 +68,25 @@ export const Descricao = styled.textarea`
   background-color: transparent;
 `
 
+export const Input = styled.input`
+  color: #8b8b8b;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: 'Roboto Mono', monospace;
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+
+  &:disabled {
+    background-color: #f9f9f9;
+  }
+`
+
 export const BarraAcoes = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 16px;

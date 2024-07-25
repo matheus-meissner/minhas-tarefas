@@ -9,7 +9,9 @@ import * as enums from '../../utils/enums/Tarefa'
 type Props = TarefaClass
 
 const Tarefa = ({
-  descricao: descricaoOriginal,
+  nomeCompleto: nomeCompletoOriginal,
+  email: emailOriginal,
+  telefone: telefoneOriginal,
   prioridade,
   status,
   titulo,
@@ -17,17 +19,27 @@ const Tarefa = ({
 }: Props) => {
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
-  const [descricao, setDescricao] = useState('')
+  const [nomeCompleto, setNomeCompleto] = useState('')
+  const [email, setEmail] = useState('')
+  const [telefone, setTelefone] = useState('')
 
   useEffect(() => {
-    if (descricaoOriginal.length > 0) {
-      setDescricao(descricaoOriginal)
+    if (nomeCompletoOriginal.length > 0) {
+      setNomeCompleto(nomeCompletoOriginal)
     }
-  }, [descricaoOriginal])
+    if (emailOriginal.length > 0) {
+      setEmail(emailOriginal)
+    }
+    if (telefoneOriginal.length > 0) {
+      setTelefone(telefoneOriginal)
+    }
+  }, [nomeCompletoOriginal, emailOriginal, telefoneOriginal])
 
   function cancelarEdicao() {
     setEstaEditando(false)
-    setDescricao(descricaoOriginal)
+    setNomeCompleto(nomeCompletoOriginal)
+    setEmail(emailOriginal)
+    setTelefone(telefoneOriginal)
   }
 
   function alteraStatusTarefa(evento: ChangeEvent<HTMLInputElement>) {
@@ -54,10 +66,25 @@ const Tarefa = ({
       <S.Tag parametro="status" status={status}>
         {status}
       </S.Tag>
-      <S.Descricao
+      <S.Input
         disabled={!estaEditando}
-        value={descricao}
-        onChange={(evento) => setDescricao(evento.target.value)}
+        value={nomeCompleto}
+        onChange={(evento) => setNomeCompleto(evento.target.value)}
+        placeholder="Nome Completo"
+      />
+      <S.Input
+        disabled={!estaEditando}
+        value={email}
+        onChange={(evento) => setEmail(evento.target.value)}
+        placeholder="Email"
+        type="email"
+      />
+      <S.Input
+        disabled={!estaEditando}
+        value={telefone}
+        onChange={(evento) => setTelefone(evento.target.value)}
+        placeholder="Telefone"
+        type="tel"
       />
       <S.BarraAcoes>
         {estaEditando ? (
@@ -66,7 +93,9 @@ const Tarefa = ({
               onClick={() => {
                 dispatch(
                   editar({
-                    descricao,
+                    nomeCompleto,
+                    email,
+                    telefone,
                     prioridade,
                     status,
                     titulo,

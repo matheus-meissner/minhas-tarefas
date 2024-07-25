@@ -4,20 +4,26 @@ class Tarefa {
   titulo: string
   prioridade: enums.Prioridade
   status: enums.Status
-  descricao: string
+  nomeCompleto: string
+  email: string
+  telefone: string
   id: number
 
   constructor(
     titulo: string,
     prioridade: enums.Prioridade,
     status: enums.Status,
-    descricao: string,
+    nomeCompleto: string,
+    email: string,
+    telefone: string,
     id: number
   ) {
     this.titulo = titulo
     this.prioridade = prioridade
     this.status = status
-    this.descricao = descricao
+    this.nomeCompleto = nomeCompleto
+    this.email = email
+    this.telefone = telefone
     this.id = id
   }
 }
