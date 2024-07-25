@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { cadastrar } from '../../store/reducers/tarefas'
 import * as enums from '../../utils/enums/Tarefa'
+import { Form, Opcoes } from './styles'
+import { BotaoSalvar } from '../../styles'
 
 const Formulario = () => {
   const [nomeCompleto, setNomeCompleto] = useState('')
@@ -27,7 +29,7 @@ const Formulario = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <label>
         Nome Completo:
         <input
@@ -60,8 +62,8 @@ const Formulario = () => {
           onChange={(e) => setTitulo(e.target.value)}
         />
       </label>
-      <label>
-        Prioridade:
+      <Opcoes>
+        <p>Prioridade:</p>
         <select
           value={prioridade}
           onChange={(e) => setPrioridade(e.target.value as enums.Prioridade)}
@@ -69,9 +71,9 @@ const Formulario = () => {
           <option value={enums.Prioridade.NORMAL}>Normal</option>
           <option value={enums.Prioridade.IMPORTANTE}>Importante</option>
         </select>
-      </label>
-      <button type="submit">Cadastrar</button>
-    </form>
+      </Opcoes>
+      <BotaoSalvar type="submit">Cadastrar</BotaoSalvar>
+    </Form>
   )
 }
 
