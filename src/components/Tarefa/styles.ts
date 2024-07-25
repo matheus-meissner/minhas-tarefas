@@ -5,7 +5,6 @@ import { Botao } from '../../styles'
 
 type TagProps = {
   prioridade?: enums.Prioridade
-  status?: enums.Status
   parametro: 'status' | 'prioridade'
 }
 
@@ -15,9 +14,6 @@ function retornaCorDeFundo(props: TagProps): string {
     if (props.prioridade === enums.Prioridade.IMPORTANTE)
       return variaveis.laranja
     return variaveis.laranja
-  } else {
-    if (props.status === enums.Status.PENDENTE) return variaveis.amarelo
-    if (props.status === enums.Status.CONCLUIDA) return variaveis.verde
   }
 
   return '#ccc'

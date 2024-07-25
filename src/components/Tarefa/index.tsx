@@ -63,9 +63,6 @@ const Tarefa = ({
       <S.Tag parametro="prioridade" prioridade={prioridade}>
         {prioridade}
       </S.Tag>
-      <S.Tag parametro="status" status={status}>
-        {status}
-      </S.Tag>
       <S.Input
         disabled={!estaEditando}
         value={nomeCompleto}
